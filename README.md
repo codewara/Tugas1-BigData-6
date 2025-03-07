@@ -15,19 +15,19 @@ pip install selenium pymongo requests xmltodict yfinance pandas
 ## Struktur Direktori
 ```
 Tugas1-BigData-6/
-│── downloads/               # Folder penyimpanan sementara file ZIP
-│── tickers.csv              # Daftar ticker saham untuk pengambilan data dari Yahoo Finance
-│── idx_scraper.py           # Skrip untuk scraping laporan keuangan IDX
-│── iqplus_scraper.py        # Skrip untuk scraping berita dari IQPlus
-│── yfinance_scraper.py      # Skrip untuk mengambil data saham dari Yahoo Finance
-│── README.md                # Dokumentasi proyek ini
+│── yfinance/                # Folder yfinance
+│───|── tickers.csv         # Daftar ticker saham untuk pengambilan data dari Yahoo Finance
+│───|── YahooFinance.py     # Skrip untuk mengambil data saham dari Yahoo Finance
+│── IDX.py                   # Skrip untuk scraping laporan keuangan IDX
+│── iqplus.py                # Skrip untuk scraping berita dari IQPlus
+│── README.md                # Skrip untuk mengambil data saham dari Yahoo Finance
 ```
 
 ## Panduan Penggunaan
 ### 1️⃣ Scraping Laporan Keuangan IDX
 Jalankan skrip berikut untuk mengambil laporan keuangan dari IDX:
 ```bash
-python idx_scraper.py
+python IDX.py
 ```
 Skrip ini akan:
 - Mengakses situs IDX dan menetapkan filter tahun serta jenis laporan.
@@ -38,7 +38,7 @@ Skrip ini akan:
 ### 2️⃣ Scraping Berita dari IQPlus
 Jalankan skrip berikut untuk mengambil berita dari IQPlus:
 ```bash
-python iqplus_scraper.py
+python iqplus.py
 ```
 Skrip ini akan:
 - Mengakses situs IQPlus dan mengambil daftar berita terbaru.
@@ -48,7 +48,7 @@ Skrip ini akan:
 ### 3️⃣ Pengambilan Data Saham dari Yahoo Finance
 Pastikan Anda memiliki file `tickers.csv` berisi daftar ticker saham. Kemudian, jalankan:
 ```bash
-python yfinance_scraper.py
+python YahooFinance.py
 ```
 Skrip ini akan:
 - Membaca daftar ticker dari `tickers.csv`.
